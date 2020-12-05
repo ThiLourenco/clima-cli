@@ -3,7 +3,7 @@ import { join } from 'path';
 
 const tokenFilePath = join(__dirname, 'token');
 
-const saveApiToken = (apiToken) => {
+function saveApiToken(apiToken) {
   return new Promise((resolve, reject) => {
     try {
       fs.writeFile(tokenFilePath, apiToken, (error) => {
@@ -18,15 +18,15 @@ const saveApiToken = (apiToken) => {
   });
 }
 
-const getApiToken = () => {
+function getApiToken() {
   return new Promise((resolve, reject) => {
     try {
       fs.readFile(tokenFilePath, 'utf-8', (error, token) => {
-        if (error ||token === '') {
+        if (error || token === '') {
           reject('Você precisa fornecer um token. Gere um token aqui: htts://advisor.climatempo.com.br');
         }
 
-        resolve();
+        resolve(token);
       });
     } catch (error) {
       reject(error);
