@@ -1,0 +1,28 @@
+{
+  "name": "clima-cli",
+  "version": "1.0.0",
+  "description": "Node-CLI para exibir o clima atual de uma cidade em tempo real.",
+  "preferGlobal": true,
+  "bin": {
+    "clima": "./bin/clima"
+  },
+  "files": [
+    "bin",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thiago-l/clima-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thiago-l/clima-cli/issues"
+  },
+  "homepage": "https://github.com/Thiago-l/clima-cli#readme",
+  "dependencies": {
+    "commander": "^6.2.0",
+    "node-fetch": "^2.6.1"
+  }
+}
