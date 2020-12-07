@@ -25,12 +25,10 @@ async function getCityForecastById(cityId) {
   try {
     const appToken = await getApiToken();
     const responseWeather = await fetch(`${apiUrl}weather/locale/${cityId}/current?token=${appToken}`);
+    console.log(responseWeather);
     const weatherJson = await responseWeather.json()
 
     return {
-      name: weatherJson.name,
-      state: weatherJson.state,
-      country: weatherJson.country,
       ...weatherJson.data
     }
   } catch(error) {
